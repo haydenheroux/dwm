@@ -28,8 +28,8 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"Gimp", NULL, NULL, 0, 1, -1},
-    {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    /*{"Gimp", NULL, NULL, 0, 1, -1},*/
+    /*{"Firefox", NULL, NULL, 1 << 8, 0, -1},*/
 };
 
 /* layout(s) */
@@ -78,6 +78,7 @@ static const char *browsercmd[] = {"firefox", NULL};
 static const char *discordcmd[] = {"discord", NULL};
 static const char *pavucmd[] = {"pavucontrol", NULL};
 static const char *gimpcmd[] = {"gimp", NULL};
+static const char *lockcmd[] = {"slock", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -88,6 +89,7 @@ static const Key keys[] = {
     SPAWN(XK_d, discordcmd),
     SPAWN(XK_p, pavucmd),
     SPAWN(XK_g, gimpcmd),
+    SPAWN(XK_l, lockcmd),
     {WIN_KEY(XK_0), tag, {.ui = ~0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
     TAGKEYS(XK_1, 0),
