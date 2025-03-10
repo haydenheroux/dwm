@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
@@ -80,6 +81,8 @@ static const char *pavucmd[] = {"pavucontrol", NULL};
 static const char *gimpcmd[] = {"gimp", NULL};
 static const char *lockcmd[] = {"slock", NULL};
 static const char *freetube[] = {"freetube", NULL};
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -92,6 +95,7 @@ static const Key keys[] = {
     SPAWN(XK_g, gimpcmd),
     SPAWN(XK_l, lockcmd),
     SPAWN(XK_f, freetube),
+	  { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
     {WIN_KEY(XK_0), tag, {.ui = ~0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
     TAGKEYS(XK_1, 0),
