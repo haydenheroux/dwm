@@ -41,14 +41,12 @@ static const int resizehints =
 static const int lockfullscreen =
     1; /* 1 will force focus on the fullscreen window */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
     /* symbol     arrange function */
     {"[\\]", dwindle}, /* first entry is default */
     {"[]=", tile},
     {"><>", NULL}, /* no layout function means floating behavior */
     {"[M]", monocle},
-    {"[@]", spiral},
 };
 
 /* key definitions */
@@ -99,6 +97,8 @@ static const Key keys[] = {
     SPAWN(XK_l, lockcmd),
     SPAWN(XK_f, freetube),
 	  { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+    { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[0]} },
+    { MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[1]} },
     {WIN_KEY(XK_0), tag, {.ui = ~0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
     TAGKEYS(XK_1, 0),
