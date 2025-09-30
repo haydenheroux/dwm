@@ -1808,9 +1808,10 @@ dwindle(Monitor *m) {
 		return;
 
 	x = m->wx;
-	y = bh;
+  int bh_ = showbar ? bh : 0;
+	y = bh_;
   w = m->ww;
-	h = m->wh - bh;
+	h = m->wh - bh_;
 
 	for(i = 0, c = nexttiled(m->clients); c && i < n; c = nexttiled(c->next), ++i) {
 		if(i != n - 1) {
