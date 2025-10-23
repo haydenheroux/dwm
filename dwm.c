@@ -750,7 +750,7 @@ drawbar(Monitor *m)
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		if (occ & 1 << i)
-			drw_rect(drw, x + boxs, boxs, boxw, boxw,
+			drw_rect(drw, x + w - boxw - boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
 				urg & 1 << i);
 		x += w;
@@ -1808,7 +1808,7 @@ dwindle(Monitor *m) {
 		return;
 
 	x = m->wx;
-  int bh_ = showbar ? bh : 0;
+  int bh_ = selmon->showbar ? bh : 0;
 	y = bh_;
   w = m->ww;
 	h = m->wh - bh_;
