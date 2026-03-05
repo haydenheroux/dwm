@@ -75,7 +75,7 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {"dmenu_run",    "-fn", dmenufont,   "-nb",
                                  normbgcolor,    "-nf", normfgcolor, "-sb",
                                  selbordercolor, "-sf", selfgcolor,  NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"kitty", NULL};
 static const char *browsercmd[] = {"zen-browser", NULL};
 static const char *discordcmd[] = {"vesktop", NULL};
 static const char *pavucmd[] = {"pavucontrol", NULL};
