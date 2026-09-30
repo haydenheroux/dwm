@@ -1,0 +1,7 @@
+# build artifacts
+*.o
+*.orig
+*.rej
+dwm
+# local config (not tracked upstream)
+config.h
